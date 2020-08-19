@@ -1,0 +1,19 @@
+{
+  "name": "goit-nodejs-hw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YuriiHaidai/goit-nodejs-hw.git"
+  },
+  "author": "Yurii Haidai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YuriiHaidai/goit-nodejs-hw/issues"
+  },
+  "homepage": "https://github.com/YuriiHaidai/goit-nodejs-hw#readme"
+}
