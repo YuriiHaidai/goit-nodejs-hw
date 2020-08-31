@@ -1,10 +1,11 @@
 {
   "name": "goit-nodejs-hw",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/YuriiHaidai/goit-nodejs-hw/issues"
   },
-  "homepage": "https://github.com/YuriiHaidai/goit-nodejs-hw#readme"
+  "homepage": "https://github.com/YuriiHaidai/goit-nodejs-hw#readme",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "uuid": "^8.3.0",
+    "yargs": "^15.4.1"
+  }
 }
