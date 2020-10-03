@@ -1,17 +1,21 @@
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
-const contactsRouter = require('./routers/contactsRouter');
+const mongoose = require('mongoose');
+const contactsRouter = require('./contacts/contactsRouter');
 
-module.exports = class UsersServer {
+require('dotenv').config();
+
+module.exports = class ContactsServer {
   constructor() {
     this.server = null;
   }
 
-  start() {
+  async start() {
     this.initServer();
     this.initMiddlewares();
     this.initRoutes();
+    await this.initDatabase();
     this.startListening();
   }
 
@@ -29,9 +33,20 @@ module.exports = class UsersServer {
     this.server.use('/api/contacts', contactsRouter);
   }
 
+  async initDatabase() {
+    try {
+      await mongoose.connect(process.env.MONGODB_URL);
+      console.log('Database connection successful');
+    } catch (e) {
+      console.error(e);
+      process.exit(1);
+    }
+  }
+
   startListening() {
-    this.server.listen(3000, err => {
-      err ? console.error(err) : console.log('Start listening at port 3000');
+    const PORT = process.env.PORT;
+    this.server.listen(PORT, err => {
+      err ? console.error(err) : console.log(`Start listening at port ${PORT}`);
     });
   }
 };
